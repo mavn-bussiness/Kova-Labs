@@ -4,24 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kova Labs — Enterprise Software Built for Africa</title>
-  <meta name="description" content="Kova Labs builds a suite of intelligent business tools designed around the realities of African corporate life — vehicle tracking, HR, compliance, payments, and more." />
-  <meta property="og:title" content="Kova Labs — Enterprise Software Built for Africa" />
-  <meta property="og:description" content="One platform. Every corporate need. Built for Uganda and Africa." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231a6b4a'/><path d='M7 7L16 16L7 25M18 25H25' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+  <meta name="description" content="Kova Labs is building the enterprise software stack Africa's corporate sector deserves — intelligent, offline-first, and compliance-ready." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a6b4a'/%3E%3Cpath d='M7 7L16 16L7 25M18 25H25' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ── Navbar ── -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="logo">
         <div class="logo-mark">
-          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         Kova Labs
@@ -31,10 +29,11 @@
         <a href="#trackiq">TrackIQ</a>
         <a href="#why">Why Kova</a>
         <a href="#market">Market</a>
+        <a href="#investor">Investors <span class="nav-badge">OPEN</span></a>
         <a href="#contact">Contact</a>
       </div>
-      <a href="#contact" class="btn btn-primary">Request Demo</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <a href="#contact" class="btn btn-dark" style="font-size:13px;">Request Demo →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -43,379 +42,537 @@
       <a href="#trackiq">TrackIQ</a>
       <a href="#why">Why Kova</a>
       <a href="#market">Market</a>
+      <a href="#investor">Investors</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Request Demo</a>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ── Hero ── -->
   <section class="hero">
     <div class="hero-content">
       <div class="eyebrow">
         <span class="eyebrow-dot"></span>
-        Piloting in Uganda &mdash; Built for Africa
+        Building for Africa · Piloting in Uganda
       </div>
-      <h1>Enterprise software<br>that works <em>here</em>.</h1>
-      <p class="hero-sub">Kova Labs builds a suite of intelligent business tools designed around the realities of African corporate life &mdash; offline-first, compliance-ready, and mobile-native.</p>
+      <h1>Enterprise software<br>built for <em>here</em>.</h1>
+      <p class="hero-sub">Kova Labs is building the intelligent business stack Africa's corporate sector deserves — offline-first, compliance-ready, mobile-native, and priced for this market.</p>
       <div class="hero-actions">
         <a href="#products" class="btn btn-dark">Explore Products</a>
         <a href="#contact" class="btn btn-outline">Book a Demo</a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><span class="num">7+</span><span class="lbl">Products in suite</span></div>
-        <div class="stat-divider"></div>
-        <div class="hero-stat"><span class="num">Uganda</span><span class="lbl">Piloting now</span></div>
-        <div class="stat-divider"></div>
-        <div class="hero-stat"><span class="num">100%</span><span class="lbl">Offline-capable</span></div>
+      <div class="investor-bar">
+        <div class="inv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <div class="inv-text">
+          <strong>Seed Round — Now Open</strong>
+          <span>We're actively onboarding early investors and enterprise pilot clients in Uganda.</span>
+        </div>
+        <a href="#investor" class="inv-link">VIEW OPPORTUNITY →</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="dashboard-mock">
-        <div class="dash-header">
-          <span>Kova Dashboard</span>
-          <div class="dash-dots"><span></span><span></span><span></span></div>
+        <div class="dm-header">
+          <div class="dm-dot" style="background:#ff5f56"></div>
+          <div class="dm-dot" style="background:#ffbd2e;margin-left:4px"></div>
+          <div class="dm-dot" style="background:#27c93f;margin-left:4px"></div>
+          <span>kova.dashboard — Live Preview</span>
         </div>
-        <div class="dash-body">
-          <div class="dash-metrics">
-            <div class="dash-metric">
-              <div class="m-val">UGX 48M</div>
-              <div class="m-lbl">Revenue this month</div>
-              <div class="m-badge">+12%</div>
+        <div class="dm-body">
+          <div class="dm-row">
+            <div class="dm-card">
+              <div class="dm-card-label">Fleet Active</div>
+              <div class="dm-card-value" id="fleetCount">24</div>
+              <div class="dm-card-sub">↑ 3 since yesterday</div>
             </div>
-            <div class="dash-metric">
-              <div class="m-val">1,204</div>
-              <div class="m-lbl">Messages handled</div>
-              <div class="m-badge">Auto</div>
-            </div>
-            <div class="dash-metric">
-              <div class="m-val">38</div>
-              <div class="m-lbl">Staff on payroll</div>
-              <div class="m-badge">Synced</div>
+            <div class="dm-card">
+              <div class="dm-card-label">MoMo Txns (Today)</div>
+              <div class="dm-card-value" id="txnCount">1,482</div>
+              <div class="dm-card-sub">↑ 12% vs avg</div>
             </div>
           </div>
-          <div class="dash-bar">
-            <div class="b-label">MoMo reconciliation &mdash; 84% complete</div>
-            <div class="dash-bar-track"><div class="dash-bar-fill" style="width:84%"></div></div>
+          <div class="dm-chart">
+            <div class="dm-chart-label">
+              <span>Revenue Index</span>
+              <span style="color:var(--accent)">+22% MoM</span>
+            </div>
+            <div class="dm-bars" id="dashBars"></div>
           </div>
-          <div class="dash-list">
-            <div class="dash-list-item"><span class="li-name">NSSF filing &mdash; due in 3 days</span><span class="li-val warn">Pending</span></div>
-            <div class="dash-list-item"><span class="li-name">47 unread customer DMs</span><span class="li-val ok">Auto-replied</span></div>
-            <div class="dash-list-item"><span class="li-name">URA tax report &mdash; June 2025</span><span class="li-val ok">Filed</span></div>
+          <div class="dm-status">
+            <div class="dm-status-row">
+              <span class="ds-label">URA PAYE Filing — Q2 2026</span>
+              <span class="ds-badge ds-green">Filed ✓</span>
+            </div>
+            <div class="dm-status-row">
+              <span class="ds-label">MTN MoMo Reconciliation</span>
+              <span class="ds-badge ds-teal">Synced</span>
+            </div>
+            <div class="dm-status-row">
+              <span class="ds-label">NSSF Compliance Score</span>
+              <span class="ds-badge ds-amber" id="nssf">92%</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
+  <!-- ── Trust Strip ── -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <span class="trust-label">Built Around</span>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Offline-first architecture
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        URA · NSSF · PAYE Compliance
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        Mobile-native · Works on 2G/3G
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Piloting in Uganda — Q3 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Products ── -->
   <section class="products" id="products">
     <div class="section-header">
       <div class="section-label">Product Suite</div>
       <h2>One platform.<br>Every corporate need.</h2>
-      <p class="section-sub">Each Kova product solves a deep, specific pain point. Use one or use them all &mdash; they share a single login, one data layer, and one support team.</p>
+      <p class="section-sub">Each Kova product is purpose-built for a real pain point. All products share one login, one data layer, and one support team. Launching sequentially — starting with TrackIQ.</p>
     </div>
+
     <div class="products-grid">
 
-      <!-- TrackIQ - featured -->
-      <div class="product-card product-card--featured">
+      <!-- Featured -->
+      <div class="product-card product-card--featured fade-in-up">
         <div class="product-icon p-teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+          </svg>
         </div>
-        <div class="product-card-body">
-          <h3>TrackIQ <span class="product-new">New</span></h3>
-          <p>Real-time vehicle and asset tracking that integrates with <em>any</em> GPS device. Monitor your entire fleet, government vehicles, or equipment from one dashboard &mdash; live maps, geofencing, fuel reports, and driver behaviour analytics.</p>
+        <div class="product-body">
+          <h3>TrackIQ <span class="product-new">Pilot Live</span></h3>
+          <p>Real-time vehicle and asset tracking compatible with <em>any</em> GPS hardware. Live maps, geofencing, fuel reports, and driver-behaviour analytics — all in one dashboard. Works on 2G, 3G, and 4G; syncs offline data automatically.</p>
+          <span class="product-tag">Fleet & Asset Management</span>
         </div>
-        <span class="product-tag">Fleet &amp; Assets</span>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in-up">
         <div class="product-icon p-green">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
         </div>
-        <h3>InboxOS</h3>
-        <p>Unified messaging across WhatsApp, email, LinkedIn, Facebook and Instagram &mdash; with AI summarisation and smart auto-replies.</p>
-        <span class="product-tag">Individual &amp; Team</span>
+        <h3>InboxOS <span class="product-soon">Coming Soon</span></h3>
+        <p>Unified messaging across WhatsApp, email, LinkedIn, Facebook & Instagram — with AI summarisation and auto-routing by team.</p>
+        <span class="product-tag">Messaging & Communication</span>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in-up">
         <div class="product-icon p-amber">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+            <line x1="7" y1="7" x2="7.01" y2="7"/>
+          </svg>
         </div>
-        <h3>LeadHarvest</h3>
-        <p>Social commerce automation. Auto-reply to buying signals, capture leads from DMs, and build your customer database automatically.</p>
+        <h3>LeadHarvest <span class="product-soon">Coming Soon</span></h3>
+        <p>Social commerce automation. Auto-reply to buying signals, capture leads from DMs, and convert social engagement into pipeline.</p>
         <span class="product-tag">Social Commerce</span>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in-up">
         <div class="product-icon p-blue">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
         </div>
-        <h3>StaffDesk</h3>
-        <p>Payroll, NSSF &amp; PAYE compliance, leave management and contracts &mdash; built around Uganda Revenue Authority requirements from day one.</p>
-        <span class="product-tag">HR &amp; Compliance</span>
+        <h3>StaffDesk <span class="product-soon">Coming Soon</span></h3>
+        <p>Payroll, NSSF & PAYE compliance, leave management, and contracts — built from the ground up around Uganda's labour requirements.</p>
+        <span class="product-tag">HR & Payroll Compliance</span>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in-up">
         <div class="product-icon p-purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
         </div>
-        <h3>PayFlow</h3>
-        <p>Mobile money reconciliation across MTN MoMo and Airtel Money, with automated invoicing and multi-currency support for cross-border trade.</p>
-        <span class="product-tag">Finance &amp; Payments</span>
+        <h3>PayFlow <span class="product-soon">Coming Soon</span></h3>
+        <p>Mobile money reconciliation across MTN MoMo and Airtel Money, with automated invoicing, receipts, and cash-flow dashboards.</p>
+        <span class="product-tag">Finance & Payments</span>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in-up">
         <div class="product-icon p-rose">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
         </div>
-        <h3>VaultDocs</h3>
-        <p>Offline-first document management with approval workflows. Stop losing critical documents across WhatsApp groups and email threads.</p>
-        <span class="product-tag">Operations</span>
-      </div>
-
-      <div class="product-card">
-        <div class="product-icon p-gray">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>TaxMate</h3>
-        <p>Guided URA, KRA and TRA tax filing with deadline reminders, auto-generated reports and compliance checklists for East African businesses.</p>
-        <span class="product-tag">Tax &amp; Compliance</span>
-      </div>
-
-      <div class="product-card">
-        <div class="product-icon p-indigo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1" ry="1"/><path d="M9 12h6M9 16h4"/></svg>
-        </div>
-        <h3>ProcureDesk</h3>
-        <p>Procurement and tender management for government agencies and corporate teams &mdash; from requisition to LPO to payment approval, fully auditable.</p>
-        <span class="product-tag">Procurement &amp; Gov</span>
+        <h3>VaultDocs <span class="product-soon">Coming Soon</span></h3>
+        <p>Offline-first document management with approval workflows, version history, and role-based access. Stop losing critical documents.</p>
+        <span class="product-tag">Operations & Compliance</span>
       </div>
 
     </div>
+
+    <!-- Roadmap -->
+    <div class="roadmap-bar fade-in-up">
+      <div class="rb-top">
+        <span class="rb-title">Product Roadmap</span>
+        <span class="rb-sub">PHASED ROLLOUT — 2026 → 2027</span>
+      </div>
+      <div class="rb-phases">
+        <div class="rb-phase active">
+          <div class="rb-phase-tag">Phase 1 · Now</div>
+          <div class="rb-phase-title">TrackIQ Pilot</div>
+          <div class="rb-phase-items">Fleet tracking · GPS integration · Live dashboard · Uganda pilot clients</div>
+        </div>
+        <div class="rb-phase next">
+          <div class="rb-phase-tag">Phase 2 · Q4 2026</div>
+          <div class="rb-phase-title">StaffDesk + PayFlow</div>
+          <div class="rb-phase-items">HR & payroll · MoMo reconciliation · URA PAYE filing automation</div>
+        </div>
+        <div class="rb-phase future">
+          <div class="rb-phase-tag">Phase 3 · 2026</div>
+          <div class="rb-phase-title">InboxOS + LeadHarvest</div>
+          <div class="rb-phase-items">Unified messaging · Social commerce · AI-powered lead capture</div>
+        </div>
+        <div class="rb-phase future">
+          <div class="rb-phase-tag">Phase 4 · 2027</div>
+          <div class="rb-phase-title">East Africa Expansion</div>
+          <div class="rb-phase-items">Kenya · Tanzania · Rwanda · VaultDocs · Full suite launch</div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <!-- TRACKIQ SPOTLIGHT -->
+  <!-- ── TrackIQ Spotlight ── -->
   <section class="trackiq" id="trackiq">
     <div class="trackiq-inner">
       <div class="trackiq-text">
-        <div class="section-label">Featured Product</div>
-        <h2>Know where every vehicle<br>and asset is. Always.</h2>
-        <p class="section-sub">TrackIQ works with any GPS tracking hardware already on your fleet &mdash; no rip-and-replace. Plug in, log in, and get full visibility within minutes.</p>
+        <div class="section-label">Featured Product — Live Pilot</div>
+        <h2>Know where every vehicle<br>and asset is. <em>Always.</em></h2>
+        <p class="section-sub">TrackIQ works with any GPS tracking hardware already on your fleet — no rip-and-replace. Plug in, log in, and get full visibility in under 10 minutes.</p>
+
         <div class="trackiq-features">
           <div class="tq-feat">
             <div class="tq-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
             </div>
             <div>
               <strong>Live map tracking</strong>
-              <p>All vehicles on a real-time map. Works on 2G, 3G, 4G &mdash; syncs offline data when connection is restored.</p>
+              <p>All vehicles on a real-time map. Works on 2G, 3G, 4G — offline data syncs automatically when reconnected.</p>
             </div>
           </div>
           <div class="tq-feat">
             <div class="tq-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
             </div>
             <div>
               <strong>Geofence alerts</strong>
-              <p>Draw zones. Get instant SMS or app alerts when a vehicle leaves a site, enters a restricted area, or parks after hours.</p>
+              <p>Instant SMS or app alerts when a vehicle leaves a site or enters a restricted area.</p>
             </div>
           </div>
           <div class="tq-feat">
             <div class="tq-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6"  y1="20" x2="6"  y2="14"/>
+              </svg>
             </div>
             <div>
-              <strong>Fuel &amp; mileage reports</strong>
-              <p>Automatic trip logs, distance reports, and fuel analytics. Catch over-fuelling and unauthorised use instantly.</p>
-            </div>
-          </div>
-          <div class="tq-feat">
-            <div class="tq-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            </div>
-            <div>
-              <strong>Device-agnostic</strong>
-              <p>Integrates with Teltonika, Concox, Queclink, Meitrack, and virtually any GPRS/GPS tracker via standard protocols.</p>
+              <strong>Fuel & mileage reports</strong>
+              <p>Automatic trip logs, distance reports, and fuel analytics. Catch over-fuelling and ghost trips instantly.</p>
             </div>
           </div>
         </div>
-        <a href="#contact" class="btn btn-dark" style="margin-top: 8px;">Get a TrackIQ Demo</a>
+
+        <div class="early-access-box">
+          <div class="ea-text">
+            <strong>Pilot Programme — Now Enrolling</strong>
+            <span>Get 3 months free access in exchange for structured feedback. Limited to 10 organisations.</span>
+          </div>
+          <a href="#contact" class="btn btn-white" style="font-size:12.5px;white-space:nowrap;">Apply Now →</a>
+        </div>
       </div>
+
       <div class="trackiq-visual">
-        <div class="tq-map-mock">
-          <div class="tq-map-header">
-            <span class="tq-map-title">TrackIQ &mdash; Fleet Overview</span>
-            <span class="tq-live-dot"><span class="live-pulse"></span>LIVE</span>
-          </div>
-          <div class="tq-map-body">
-            <div class="tq-map-bg">
-              <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-                <rect width="320" height="220" fill="#e8ede8"/>
-                <rect x="0" y="80" width="320" height="10" fill="#fff" opacity="0.65"/>
-                <rect x="0" y="140" width="320" height="8" fill="#fff" opacity="0.5"/>
-                <rect x="80" y="0" width="8" height="220" fill="#fff" opacity="0.5"/>
-                <rect x="180" y="0" width="10" height="220" fill="#fff" opacity="0.65"/>
-                <rect x="240" y="0" width="6" height="220" fill="#fff" opacity="0.4"/>
-                <rect x="20" y="20" width="55" height="40" rx="3" fill="#d0e0d0" opacity="0.8"/>
-                <rect x="100" y="100" width="65" height="30" rx="3" fill="#d0e0d0" opacity="0.8"/>
-                <rect x="195" y="20" width="80" height="50" rx="3" fill="#d0e0d0" opacity="0.7"/>
-                <rect x="20" y="155" width="50" height="45" rx="3" fill="#d0e0d0" opacity="0.7"/>
-                <rect x="195" y="155" width="110" height="45" rx="3" fill="#d0e0d0" opacity="0.7"/>
-              </svg>
-              <!-- Vehicle markers — SVG-based, no emoji -->
-              <div class="tq-pin tq-pin--moving" style="top:32%;left:25%;">
-                <div class="tq-pin-dot tq-dot-green"></div>
-                <div class="tq-pin-label">TN-0012</div>
-              </div>
-              <div class="tq-pin tq-pin--moving" style="top:56%;left:59%;">
-                <div class="tq-pin-dot tq-dot-green"></div>
-                <div class="tq-pin-label">UG-4421</div>
-              </div>
-              <div class="tq-pin tq-pin--parked" style="top:22%;left:70%;">
-                <div class="tq-pin-dot tq-dot-gray"></div>
-                <div class="tq-pin-label">GVT-002</div>
-              </div>
-              <div class="tq-pin tq-pin--alert" style="top:68%;left:16%;">
-                <div class="tq-pin-dot tq-dot-red"></div>
-                <div class="tq-pin-label">&#9888; UG-1183</div>
-              </div>
-            </div>
-          </div>
-          <div class="tq-map-footer">
-            <div class="tq-stat"><span class="tq-num tq-green">18</span><span class="tq-lbl">Moving</span></div>
-            <div class="tq-stat"><span class="tq-num tq-gray">6</span><span class="tq-lbl">Parked</span></div>
-            <div class="tq-stat"><span class="tq-num tq-amber">1</span><span class="tq-lbl">Alert</span></div>
-            <div class="tq-stat"><span class="tq-num">25</span><span class="tq-lbl">Total</span></div>
+        <div class="animated-map">
+          <div class="map-grid"></div>
+          <div class="moving-dot"></div>
+          <div class="moving-dot-2"></div>
+          <div class="map-pin" style="top:40%;left:30%"></div>
+          <div class="map-pin" style="top:65%;left:60%"></div>
+          <div class="map-pin" style="top:25%;left:55%"></div>
+          <div class="map-stats">
+            <span class="live-badge">LIVE</span>
+            <span id="liveVehicleCount">24</span> active · <span id="alertCount">2</span> alerts
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY -->
+  <!-- ── Why Kova ── -->
   <section class="why" id="why">
     <div class="why-grid">
       <div class="why-left">
         <div class="section-label">Why Kova Labs</div>
-        <h2>Global tools weren't built for this market.</h2>
+        <h2>Global tools were<br>not built <em>for here</em>.</h2>
         <div class="why-points">
-          <div class="why-point">
+          <div class="why-point fade-in-up">
             <div class="why-num">1</div>
             <div>
               <h4>Offline-first architecture</h4>
-              <p>Everything works without internet and syncs when connected. Power outages and slow connections won't interrupt your business.</p>
+              <p>Everything works without internet and syncs when connected. Power outages and patchy networks won't interrupt your business.</p>
             </div>
           </div>
-          <div class="why-point">
+          <div class="why-point fade-in-up">
             <div class="why-num">2</div>
             <div>
               <h4>Compliance built by country</h4>
-              <p>URA, NSSF, PAYE for Uganda. KRA for Kenya. FIRS for Nigeria. No manual configuration &mdash; baked in from day one.</p>
+              <p>URA, NSSF, PAYE for Uganda. KRA for Kenya. FIRS for Nigeria — baked in from day one, not bolted on later.</p>
             </div>
           </div>
-          <div class="why-point">
+          <div class="why-point fade-in-up">
             <div class="why-num">3</div>
             <div>
               <h4>Mobile money as first-class</h4>
-              <p>MTN MoMo and Airtel Money aren't afterthought plugins. They're core to how Kova handles payments and reconciliation.</p>
+              <p>MTN MoMo and Airtel Money aren't afterthought plugins. They're core to how Kova handles every payment.</p>
             </div>
           </div>
-          <div class="why-point">
+          <div class="why-point fade-in-up">
             <div class="why-num">4</div>
             <div>
               <h4>Priced in local currency</h4>
-              <p>No dollar-denominated subscriptions. Kova pricing is anchored in UGX, KES, and NGN &mdash; stable regardless of exchange rate.</p>
+              <p>No dollar-denominated subscriptions with unpredictable exchange risk. Kova pricing is anchored in UGX, KES, and NGN.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="why-visual">
-        <div class="why-card"><div class="wc-top"><span class="wc-label">System status &mdash; offline mode</span><span class="wc-badge ok">Active</span></div><div class="why-progress"><div class="why-progress-fill fill-green" style="width:100%"></div></div></div>
-        <div class="why-card"><div class="wc-top"><span class="wc-label">TrackIQ &mdash; 24 vehicles live</span><span class="wc-badge ok">On route</span></div><div class="why-progress"><div class="why-progress-fill fill-teal" style="width:88%"></div></div></div>
-        <div class="why-card"><div class="wc-top"><span class="wc-label">URA PAYE filing &mdash; June 2025</span><span class="wc-badge ok">Filed</span></div><div class="why-progress"><div class="why-progress-fill fill-green" style="width:100%"></div></div></div>
-        <div class="why-card"><div class="wc-top"><span class="wc-label">MTN MoMo reconciliation</span><span class="wc-badge ok">Synced</span></div><div class="why-progress"><div class="why-progress-fill fill-green" style="width:96%"></div></div></div>
-        <div class="why-card"><div class="wc-top"><span class="wc-label">InboxOS &mdash; messages handled today</span><span class="wc-badge warn">847 auto-replied</span></div><div class="why-progress"><div class="why-progress-fill fill-amber" style="width:72%"></div></div></div>
-        <div class="why-card"><div class="wc-top"><span class="wc-label">Staff payroll &mdash; 38 employees</span><span class="wc-badge ok">Processed</span></div><div class="why-progress"><div class="why-progress-fill fill-dark" style="width:100%"></div></div></div>
+      <div class="why-visual fade-in-up">
+        <div class="why-card">
+          <div class="wc-top">
+            <span class="wc-label">URA PAYE Filing — Q2 2026</span>
+            <span class="wc-badge ok">Filed ✓</span>
+          </div>
+          <div class="why-progress"><div class="why-progress-fill fill-green" style="width:100%"></div></div>
+        </div>
+        <div class="why-card">
+          <div class="wc-top">
+            <span class="wc-label">MTN MoMo Reconciliation</span>
+            <span class="wc-badge ok">Synced</span>
+          </div>
+          <div class="why-progress"><div class="why-progress-fill fill-teal" style="width:97%"></div></div>
+        </div>
+        <div class="why-card">
+          <div class="wc-top">
+            <span class="wc-label">NSSF Compliance Score</span>
+            <span class="wc-badge ok" id="complianceBadge">92%</span>
+          </div>
+          <div class="why-progress"><div id="complianceFill" class="why-progress-fill fill-green" style="width:92%"></div></div>
+        </div>
+        <div class="why-card">
+          <div class="wc-top">
+            <span class="wc-label">Airtel Money Sync</span>
+            <span class="wc-badge ok">Synced</span>
+          </div>
+          <div class="why-progress"><div class="why-progress-fill fill-teal" style="width:100%"></div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MARKET -->
+  <!-- ── Market ── -->
   <section class="market" id="market">
     <div class="section-label">The Opportunity</div>
-    <h2>Africa's corporate tech gap is enormous.</h2>
-    <p class="section-sub">The continent's SME and enterprise sector is underserved by software built for Western markets. Kova Labs is positioned to lead the next wave.</p>
+    <h2>Africa's corporate tech gap<br>is <em>enormous</em>.</h2>
+    <p class="section-sub" style="margin:0 auto;">The continent's SME and enterprise sector is deeply underserved by software built for Western markets. Kova Labs is positioned to lead the next wave.</p>
     <div class="market-stats">
-      <div class="market-stat"><div class="ms-val">44M<span>+</span></div><div class="ms-lbl">SMEs across Sub-Saharan Africa</div></div>
-      <div class="market-stat"><div class="ms-val">$180<span>B</span></div><div class="ms-lbl">African digital economy projected value</div></div>
-      <div class="market-stat"><div class="ms-val">600<span>M+</span></div><div class="ms-lbl">Mobile money users on the continent</div></div>
-      <div class="market-stat"><div class="ms-val">East<span> Africa</span></div><div class="ms-lbl">Initial focus &mdash; Uganda, Kenya, Tanzania, Rwanda</div></div>
+      <div class="market-stat fade-in-up">
+        <div class="ms-val">44<span>M+</span></div>
+        <div class="ms-lbl">SMEs across Sub-Saharan Africa</div>
+      </div>
+      <div class="market-stat fade-in-up">
+        <div class="ms-val">$180<span>B</span></div>
+        <div class="ms-lbl">African digital economy projected value by 2026</div>
+      </div>
+      <div class="market-stat fade-in-up">
+        <div class="ms-val">600<span>M+</span></div>
+        <div class="ms-lbl">Mobile money users on the continent</div>
+      </div>
+      <div class="market-stat fade-in-up">
+        <div class="ms-val">East<span> Africa</span></div>
+        <div class="ms-lbl">Initial focus — Uganda, Kenya, Tanzania, Rwanda</div>
+      </div>
     </div>
     <div class="tag-row">
       <span class="tag">Uganda</span><span class="tag">Kenya</span><span class="tag">Tanzania</span>
-      <span class="tag">Rwanda</span><span class="tag">Nigeria</span><span class="tag">Ghana</span>
-      <span class="tag">South Africa</span><span class="tag">+ 40 more markets</span>
+      <span class="tag">Rwanda</span><span class="tag">Nigeria</span><span class="tag">Ghana</span><span class="tag">South Africa</span>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ── Investor Section ── -->
+  <section class="investor" id="investor">
+    <div class="investor-inner">
+      <div class="investor-top">
+        <div>
+          <div class="section-label">For Investors</div>
+          <h2>Join the team<br>building Africa's<br>enterprise layer.</h2>
+          <p class="section-sub">We're raising a seed round to accelerate product development and pilot expansion across Uganda and Kenya. This is an early-mover opportunity in one of the world's fastest-growing tech markets.</p>
+        </div>
+        <div>
+          <div class="inv-metrics">
+            <div class="inv-metric">
+              <div class="inv-metric-val">44M</div>
+              <div class="inv-metric-lbl">SMEs currently underserved by enterprise software in Sub-Saharan Africa</div>
+            </div>
+            <div class="inv-metric">
+              <div class="inv-metric-val">$180B</div>
+              <div class="inv-metric-lbl">Projected African digital economy value — largely untapped by local SaaS</div>
+            </div>
+            <div class="inv-metric">
+              <div class="inv-metric-val">6</div>
+              <div class="inv-metric-lbl">Product verticals planned, each addressing a distinct, high-value pain point</div>
+            </div>
+            <div class="inv-metric">
+              <div class="inv-metric-val">2026</div>
+              <div class="inv-metric-lbl">First paying clients targeted — TrackIQ pilot enrolling now</div>
+            </div>
+          </div>
+          <div class="inv-cta">
+            <a href="#contact" class="btn btn-gold">Request Investor Deck →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="inv-highlights">
+        <div class="inv-hl">
+          <div class="inv-hl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <strong>First-mover advantage in an underserved market</strong>
+            <p>No African-built enterprise suite currently addresses offline-first compliance + mobile money in one integrated platform. Kova is building that category.</p>
+          </div>
+        </div>
+        <div class="inv-hl">
+          <div class="inv-hl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+              <polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Scalable SaaS model with recurring revenue</strong>
+            <p>Monthly subscriptions priced in local currency, with clear expansion paths across East Africa and beyond. Low churn through deep compliance integration.</p>
+          </div>
+        </div>
+        <div class="inv-hl">
+          <div class="inv-hl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Multi-country expansion built into the roadmap</strong>
+            <p>Uganda is the proving ground. Kenya, Tanzania, and Rwanda are on the 2026–2027 roadmap, each with tailored compliance modules. Nigeria and Ghana to follow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
-      <div class="section-label" style="color:rgba(255,255,255,0.4)">Get in touch</div>
-      <h2>Ready to see Kova in action?</h2>
-      <p>Join our pilot programme or book a demo. We are currently onboarding companies and government organisations in Uganda.</p>
+      <div class="section-label" style="justify-content:center;">Get in Touch</div>
+      <h2>Ready to see Kova<br>in action?</h2>
+      <p>Book a demo, join our pilot programme, or request our investor deck. We're onboarding companies and government organisations in Uganda now.</p>
+
       <form class="contact-form" id="contact-form">
         <div class="form-row">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="text" name="company" placeholder="Company / Organisation" required />
+          <input type="text"  name="name"    placeholder="Your name"              required />
+          <input type="text"  name="company" placeholder="Company / Organisation" required />
         </div>
-        <input type="email" name="email" placeholder="Work email" required />
-        <input type="tel" name="phone" placeholder="Phone number (optional)" />
+        <input type="email" name="email"   placeholder="Work email"              required />
+        <input type="tel"   name="phone"   placeholder="Phone number (optional)" />
         <select name="interest">
-          <option value="" disabled selected>Which product interests you most?</option>
-          <option>TrackIQ &mdash; Vehicle &amp; Asset Tracking</option>
-          <option>InboxOS &mdash; Unified Messaging</option>
-          <option>LeadHarvest &mdash; Social Commerce</option>
-          <option>StaffDesk &mdash; HR &amp; Payroll</option>
-          <option>PayFlow &mdash; Mobile Money</option>
-          <option>VaultDocs &mdash; Document Management</option>
-          <option>TaxMate &mdash; Tax Compliance</option>
-          <option>ProcureDesk &mdash; Procurement</option>
-          <option>Full Suite</option>
+          <option value="" disabled selected>What can we help with?</option>
+          <option>TrackIQ Demo — Vehicle & Asset Tracking</option>
+          <option>Full Suite — All Products Overview</option>
+          <option>Investor Deck Request</option>
+          <option>Pilot Programme Application</option>
+          <option>StaffDesk — HR & Payroll</option>
+          <option>PayFlow — Mobile Money</option>
+          <option>General Enquiry</option>
         </select>
         <textarea name="message" placeholder="Tell us about your organisation (optional)" rows="3"></textarea>
-        <button type="submit" class="btn btn-white">Send Request</button>
+        <button type="submit" class="btn btn-accent" style="justify-content:center;">Send Request →</button>
       </form>
+
       <p class="form-note" id="form-note"></p>
+
       <div class="contact-details">
         <a href="mailto:kovalabsug@gmail.com" class="contact-detail-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
           kovalabsug@gmail.com
         </a>
         <a href="tel:+256750060880" class="contact-detail-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
           +256 750 060 880
-        </a>
-        <a href="tel:+256772479456" class="contact-detail-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +256 772 479 456
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <a href="#" class="logo" style="font-size:15px;">
-        <div class="logo-mark" style="width:22px;height:22px;border-radius:5px;">
-          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:12px;height:12px;">
-            <path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="logo-mark" style="width:24px;height:24px;">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         Kova Labs
       </a>
-      <p class="f-copy">&copy; 2025 Kova Labs. Kampala, Uganda.</p>
+      <p class="f-copy">&copy; 2026 Kova Labs · Kampala, Uganda</p>
       <div class="f-links">
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
