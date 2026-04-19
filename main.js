@@ -13,7 +13,7 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 
 // ── Scroll Animations ─────────────────────────────────────
 const fadeEls = document.querySelectorAll(
-  '.product-card, .why-point, .market-stat, .why-card, .hero-stat'
+  '.product-card, .why-point, .market-stat, .why-card, .hero-stat, .contact-detail-item'
 );
 
 fadeEls.forEach(el => el.classList.add('fade-in'));
@@ -44,16 +44,27 @@ const note = document.getElementById('form-note');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
+  const data = new FormData(form);
+  
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  // Simulate submission (replace with your backend/Formspree endpoint)
+  // Build mailto as reliable fallback
+  const subject = encodeURIComponent('Kova Labs Demo Request — ' + (data.get('company') || data.get('name')));
+  const body = encodeURIComponent(
+    `Name: ${data.get('name')}\nCompany: ${data.get('company')}\nEmail: ${data.get('email')}\nPhone: ${data.get('phone') || 'N/A'}\nInterested in: ${data.get('interest') || 'N/A'}\n\nMessage:\n${data.get('message') || 'N/A'}`
+  );
+  
+  // Open mail client
+  window.location.href = `mailto:kovalabsug@gmail.com?subject=${subject}&body=${body}`;
+  
   setTimeout(() => {
-    note.textContent = '✓ Thank you! We will be in touch within 24 hours.';
+    note.textContent = '✓ Your mail client should open. Alternatively reach us at kovalabsug@gmail.com';
     note.style.color = '#6ee7b7';
     btn.textContent = 'Sent!';
     form.reset();
-  }, 1200);
+    setTimeout(() => { btn.textContent = 'Send Request ›'; btn.disabled = false; }, 3000);
+  }, 800);
 });
 
 // ── Smooth active nav highlight ───────────────────────────
