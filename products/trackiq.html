@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrackIQ — Fleet & Asset Tracking for Africa | Kova Labs</title>
+  <meta name="description" content="TrackIQ is real-time fleet and asset tracking software built for African businesses. Works on 2G/3G, offline-first, compatible with any GPS hardware."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    .map-demo {
+      background: #060d06; border-radius: 20px; height: 280px;
+      position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);
+      margin-top: 48px;
+    }
+    .map-grid {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(74,222,128,0.12) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .mdot {
+      position: absolute; width: 12px; height: 12px; border-radius: 50%;
+      background: #4ade80; box-shadow: 0 0 18px #4ade80, 0 0 40px rgba(74,222,128,0.3);
+    }
+    .mdot-2 {
+      position: absolute; width: 10px; height: 10px; border-radius: 50%;
+      background: #38bdf8; box-shadow: 0 0 14px #38bdf8;
+    }
+    .mdot   { animation: driveA 10s infinite ease-in-out; }
+    .mdot-2 { animation: driveB 14s infinite ease-in-out; }
+    @keyframes driveA { 0%{top:20%;left:10%} 25%{top:55%;left:40%} 50%{top:28%;left:75%} 75%{top:68%;left:58%} 100%{top:20%;left:10%} }
+    @keyframes driveB { 0%{top:60%;left:70%} 33%{top:30%;left:20%} 66%{top:70%;left:50%} 100%{top:60%;left:70%} }
+    .map-pin { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+    .map-stats-bar {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      display: flex; gap: 10px;
+    }
+    .mstat {
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(10px);
+      padding: 8px 14px; border-radius: 40px;
+      font-size: 12px; font-family: 'JetBrains Mono',monospace;
+    }
+    .mstat.green { color: #4ade80; }
+    .mstat.blue  { color: #38bdf8; }
+    .mstat.amber { color: #fbbf24; }
+    .live-dot { display:inline-block; width:6px; height:6px; background:#4ade80; border-radius:50%; box-shadow:0 0 8px #4ade80; margin-right:6px; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Kova Labs
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#products">All Products</a>
+        <a href="screeniq.html">ScreenIQ</a>
+        <a href="kovacard.html">KovaCard</a>
+        <a href="staffdesk.html">StaffDesk</a>
+        <a href="payflow.html">PayFlow</a>
+      </div>
+      <a href="../index.html#contact" class="nav-back">← Get Early Access</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="product-hero">
+    <div class="product-hero-bg">
+      <img src="../images/trackiq-fleet.jpg" alt="Commercial fleet vehicles Africa"/>
+      <div class="product-hero-overlay" style="background:linear-gradient(160deg,rgba(5,10,7,0.78) 0%,rgba(13,122,110,0.18) 100%);"></div>
+    </div>
+    <div class="product-hero-content">
+      <div class="ph-badge">
+        <span class="dot"></span>
+        Coming Soon &middot; Fleet &amp; Asset Tracking
+      </div>
+      <h1>Know where every vehicle<br>is. <em>Always.</em></h1>
+      <p>TrackIQ works with any GPS hardware already on your fleet &mdash; no rip-and-replace. Get live maps, geofencing, fuel reports, and driver behaviour analytics in under 10 minutes. Works on 2G, 3G, and 4G.</p>
+      <div class="hero-btns">
+        <a href="../index.html#contact" class="btn-primary">Join the Waitlist &rarr;</a>
+        <a href="#features" class="btn-ghost">See Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Map Demo -->
+  <div style="background:var(--ink); padding:0 32px 56px;">
+    <div class="inner">
+      <div class="map-demo reveal">
+        <div class="map-grid"></div>
+        <div class="mdot"></div>
+        <div class="mdot-2"></div>
+        <div class="map-pin" style="top:40%;left:30%;"></div>
+        <div class="map-pin" style="top:65%;left:60%;"></div>
+        <div class="map-pin" style="top:25%;left:55%;"></div>
+        <div class="map-stats-bar">
+          <div class="mstat green"><span class="live-dot"></span>LIVE &mdash; 24 vehicles active</div>
+          <div class="mstat blue">2 alerts</div>
+          <div class="mstat amber">1 geofence breach</div>
+        </div>
+      </div>
+      <p style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);margin-top:14px;">Live tracking demo &mdash; real-time positions update every 30 seconds.</p>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="section" id="features" style="background:var(--surface);">
+    <div class="inner">
+      <div class="section-label">Core Features</div>
+      <h2>Everything a fleet manager<br>in Africa <em>actually needs</em>.</h2>
+      <p class="section-sub">Built around the real challenges of managing vehicles across Uganda's roads &mdash; patchy internet, fuel theft, untrustworthy trip logs.</p>
+      <div class="features-grid reveal">
+        <div class="feat-card">
+          <div class="feat-icon fi-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </div>
+          <h3>Live Map Tracking</h3>
+          <p>All vehicles plotted on a real-time map with 30-second refresh. Works on 2G, 3G, 4G. Offline data syncs automatically when the device reconnects.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>Geofence Alerts</h3>
+          <p>Draw zones on the map. Get instant SMS or in-app alerts when any vehicle enters or exits a restricted area &mdash; site, school, city boundary.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Fuel &amp; Mileage Reports</h3>
+          <p>Automatic trip logs, distance reports, and fuel consumption analytics. Catch over-fuelling and ghost trips instantly. Export to PDF or Excel.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Driver Behaviour Scoring</h3>
+          <p>Score each driver on speeding, harsh braking, and idling. Identify high-risk drivers before accidents happen. Reduce insurance and maintenance costs.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Any GPS Hardware</h3>
+          <p>Works with Concox, Teltonika, Coban, and any MQTT/GPRS-compatible tracker. No proprietary hardware lock-in &mdash; use what you already have.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Multi-User &amp; Multi-Fleet</h3>
+          <p>Managers, dispatchers, and drivers each get role-specific views. Manage multiple vehicle categories &mdash; trucks, saloons, motorcycles &mdash; in one account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section usecases">
+    <div class="inner">
+      <div class="section-label">Industries</div>
+      <h2>Who <em>TrackIQ</em> is built for.</h2>
+      <div class="usecase-grid reveal">
+        <div class="usecase-card">
+          <img src="../images/trackiq-fleet.jpg" alt="Fleet vehicles" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Logistics &amp; Transport</span>
+            <h4>Delivery &amp; Distribution</h4>
+            <p>Track delivery trucks, monitor route compliance, and prove delivery times to clients with automated trip reports.</p>
+          </div>
+        </div>
+        <div class="usecase-card">
+          <img src="../images/trackiq-gps.jpg" alt="GPS tracking" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Government &amp; NGO</span>
+            <h4>Government Vehicle Pools</h4>
+            <p>Eliminate ghost trips and fuel theft in government motor pools. Every trip logged, every kilometre accounted for.</p>
+          </div>
+        </div>
+        <div class="usecase-card">
+          <img src="../images/trackiq-dashboard.jpg" alt="Analytics dashboard" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Corporate</span>
+            <h4>Company Car Fleets</h4>
+            <p>Monitor executive and staff vehicles, enforce private-use policies, and track maintenance schedules.</p>
+          </div>
+        </div>
+        <div class="usecase-card">
+          <img src="../images/about-team.jpg" alt="School buses" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Education</span>
+            <h4>School Bus Tracking</h4>
+            <p>Parents get live location of school buses. Schools can prove buses ran on time. Drivers know they're accountable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
+        <div>
+          <div class="section-label">Setup in Minutes</div>
+          <h2>No engineers. No downtime.<br><em>Just plug and track.</em></h2>
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-num">1</div>
+              <div><h4>Connect your existing GPS devices</h4><p>Enter your device IMEI or APN credentials. TrackIQ supports all major GPS tracker protocols. Takes 2 minutes per device.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">2</div>
+              <div><h4>Name your vehicles &amp; assign drivers</h4><p>Add vehicle details, plate numbers, and assign drivers. Set geofences around your depots or client sites.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">3</div>
+              <div><h4>Watch your fleet go live</h4><p>Vehicles appear on the map within minutes. Start seeing trips, speeds, and alerts in real time immediately.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">4</div>
+              <div><h4>Get weekly reports automatically</h4><p>Fuel reports, trip summaries, and driver scores sent to your email every Monday. No manual exports needed.</p></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="../images/trackiq-dashboard.jpg" alt="TrackIQ analytics dashboard"
+            style="width:100%;border-radius:26px;box-shadow:0 32px 64px -20px rgba(0,0,0,0.15);object-fit:cover;max-height:460px;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="inner">
+      <div class="section-label center" style="color:rgba(255,255,255,0.3);">Join the Waitlist</div>
+      <h2>Be first when<br><em>TrackIQ</em> launches.</h2>
+      <p>We're building TrackIQ now. Join the waitlist for early pricing and pilot access. Our ScreenIQ pilot is live now &mdash; try that while you wait.</p>
+      <div class="cta-btns">
+        <a href="../index.html#contact" class="btn-primary">Join the Waitlist &rarr;</a>
+        <a href="screeniq.html" class="btn-ghost">See ScreenIQ (Live Pilot)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="f-logo">
+        <div class="logo-mark"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        Kova Labs
+      </a>
+      <p class="f-copy">&copy; 2026 Kova Labs &middot; Kampala, Uganda</p>
+      <div class="f-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#products">Products</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.12});
+    document.querySelectorAll('.reveal,.step').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ScreenIQ — Cloud Digital Signage for Africa | Kova Labs</title>
+  <meta name="description" content="ScreenIQ is cloud-based digital signage software built for African hospitals, banks, and retail branches. Manage screens centrally. Works offline."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    .pilot-label { background: linear-gradient(90deg,#1a6b4a,#0d7a6e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .screen-mockup {
+      background: #0a0d0b; border-radius: 18px; padding: 12px;
+      box-shadow: 0 40px 80px -20px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.1); margin-top: 52px;
+    }
+    .screen-inner {
+      border-radius: 10px; overflow: hidden; height: 320px;
+      background: linear-gradient(135deg,#1a6b4a 0%,#0d7a6e 50%,#c9a227 100%);
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .screen-content { text-align: center; color: #fff; }
+    .screen-content .screen-title { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .screen-content .screen-sub { font-size: 13px; opacity: 0.7; }
+    .screen-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);
+      padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .screen-live { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #4ade80; font-family: 'JetBrains Mono',monospace; }
+    .screen-live::before { content:''; width:6px; height:6px; background:#4ade80; border-radius:50%; box-shadow:0 0 8px #4ade80; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.3;} }
+    .screen-zones { display: grid; grid-template-columns: 2fr 1fr; gap: 2px; height: 100%; }
+    .zone-main { background: linear-gradient(160deg,#1a6b4a,#155a3e); padding: 28px; display:flex; flex-direction:column; justify-content:space-between; }
+    .zone-side { display: flex; flex-direction:column; gap:2px; }
+    .zone-side-item { flex:1; background: rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; font-size:11px; color:rgba(255,255,255,0.6); }
+    .queue-row { display:flex; gap:10px; margin-top:8px; }
+    .queue-num { background: rgba(255,255,255,0.15); border-radius:8px; padding: 8px 14px; font-size:22px; font-weight:700; color:#fff; }
+    .ticker { display:flex; gap: 8px; overflow: hidden; }
+    .ticker-item { background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius:4px; font-size:11px; color:rgba(255,255,255,0.7); white-space:nowrap; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        Kova Labs
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#products">All Products</a>
+        <a href="kovacard.html">KovaCard</a>
+        <a href="trackiq.html">TrackIQ</a>
+        <a href="staffdesk.html">StaffDesk</a>
+        <a href="payflow.html">PayFlow</a>
+      </div>
+      <a href="../index.html#contact" class="nav-back">← Get Early Access</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="product-hero">
+    <div class="product-hero-bg">
+      <img src="../images/screeniq-hero.jpg" alt="Digital signage in African corporate lobby"/>
+      <div class="product-hero-overlay"></div>
+    </div>
+    <div class="product-hero-content">
+      <div class="ph-badge">
+        <span class="dot"></span>
+        Pilot Project &middot; Kova Labs &middot; Digital Signage
+      </div>
+      <h1>One dashboard.<br><em>Every screen.</em></h1>
+      <p>ScreenIQ is cloud-based digital signage software built for African hospitals, banks, telecom branches, and retail chains. Control what shows on every screen — from anywhere — and keep it running even when the internet drops.</p>
+      <div class="hero-btns">
+        <a href="../index.html#contact" class="btn-primary">Request Pilot Access &rarr;</a>
+        <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Screen Mockup -->
+  <div style="background: var(--ink); padding: 0 32px 60px;">
+    <div class="inner">
+      <div class="screen-mockup reveal">
+        <div class="screen-zones" style="height:320px; display:grid; grid-template-columns:2fr 1fr; gap:3px; border-radius:10px; overflow:hidden;">
+          <div style="background:linear-gradient(160deg,#1a3a28,#0d2018); padding:28px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">Queue Management · Outpatient</div>
+              <div style="font-size:42px; font-weight:700; color:#fff; line-height:1;">A-047</div>
+              <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:6px;">Now Serving &mdash; Window 3</div>
+              <div style="display:flex; gap:8px; margin-top:16px;">
+                <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:8px 14px; color:#fff; font-size:18px; font-weight:700;">A-048</div>
+                <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:8px 14px; color:#fff; font-size:18px; font-weight:700;">A-049</div>
+                <div style="background:rgba(255,255,255,0.06); border-radius:8px; padding:8px 14px; color:rgba(255,255,255,0.4); font-size:18px; font-weight:700;">A-050</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span style="background:rgba(255,255,255,0.07); padding:4px 12px; border-radius:20px; font-size:11px; color:rgba(255,255,255,0.5);">Pay via MTN MoMo *182*5*1#</span>
+              <span style="background:rgba(26,107,74,0.3); padding:4px 12px; border-radius:20px; font-size:11px; color:#4ade80;">Screens: 4 LIVE</span>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <div style="flex:1; background:linear-gradient(135deg,#1a6b4a,#155a3e); padding:16px; display:flex; flex-direction:column; justify-content:center;">
+              <div style="font-size:10px; color:rgba(255,255,255,0.5); font-family:'JetBrains Mono',monospace; margin-bottom:6px;">WEATHER · KLA</div>
+              <div style="font-size:28px; color:#fff; font-weight:300;">26°C</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.5);">Partly cloudy</div>
+            </div>
+            <div style="flex:1; background:rgba(201,162,39,0.15); border:1px solid rgba(201,162,39,0.2); padding:16px; display:flex; flex-direction:column; justify-content:center;">
+              <div style="font-size:10px; color:#c9a227; font-family:'JetBrains Mono',monospace; margin-bottom:6px;">ANNOUNCEMENT</div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.75); line-height:1.5;">Medical camp this Saturday. Free consultation 9AM–4PM.</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.04); padding:12px; display:flex; align-items:center; gap:8px;">
+              <div style="width:6px;height:6px;background:#4ade80;border-radius:50%;box-shadow:0 0 8px #4ade80;"></div>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#4ade80;">LIVE &mdash; kova.screen/xyz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(255,255,255,0.3); margin-top:16px;">Live screen preview — this is what your screens display. Managed from one dashboard.</p>
+    </div>
+  </div>
+
+  <!-- Story / Origin -->
+  <section class="section story">
+    <div class="inner story-grid">
+      <div class="story-img-wrap">
+        <img src="../images/screeniq-hospital.jpg" alt="African hospital lobby with screens"/>
+      </div>
+      <div>
+        <div class="section-label">The Origin Story</div>
+        <h2>Built from a real<br><em>hospital problem</em>.</h2>
+        <blockquote class="story-quote">
+          "During my ICT internship at a government hospital, patients had no idea which queue they were in, which window to go to, or where to find the pharmacy. Staff printed paper notices and taped them to walls. I knew software could fix this."
+        </blockquote>
+        <div class="story-cite">— Kova Labs Founder, Hospital ICT Intern 2024</div>
+        <p style="font-size:14px; color:var(--ink-2); line-height:1.75; margin-top:20px;">
+          ScreenIQ was born from this experience. It started as a queue display system and evolved into a full digital signage platform — capable of running in hospitals, banks, corporate lobbies, retail stores, and government offices across Africa.
+        </p>
+        <div class="pilot-banner" style="margin-top:32px;">
+          <div class="pb-left">
+            <strong>&#128680; Pilot Enrolling Now</strong>
+            <span>We're onboarding 5 organisations for a free 3-month pilot. Apply before spots fill.</span>
+          </div>
+          <a href="../index.html#contact" class="btn-accent">Apply for Pilot</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" style="background:var(--surface);">
+    <div class="inner">
+      <div class="section-label">What ScreenIQ Does</div>
+      <h2>Everything your screens need.<br><em>Nothing you don't.</em></h2>
+      <p class="section-sub">Built for organisations that need reliable, centrally-managed digital content — without the complexity or cost of Western enterprise solutions.</p>
+
+      <div class="features-grid reveal">
+        <div class="feat-card">
+          <div class="feat-icon fi-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>Centralized Screen Management</h3>
+          <p>Add, remove, and update any screen from one web dashboard. No need to visit each screen physically — one change updates all locations instantly.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16M16 6v16"/>
+            </svg>
+          </div>
+          <h3>Offline-First Playback</h3>
+          <p>Content is cached locally on each device. When internet drops — and it will — your screens keep playing. No blank screens, no embarrassment.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Queue & Wayfinding Display</h3>
+          <p>Show live queue numbers, department directions, and floor maps. Critical for hospitals, government offices, banks — anywhere people wait in queues.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <h3>Mobile Money Integration</h3>
+          <p>Display live MTN MoMo and Airtel Money payment prompts, USSD codes, and QR codes automatically. Drive cashless adoption at the point of service.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Role-Based Content Control</h3>
+          <p>Branch managers can update their local screens; head office controls the brand-wide content. Permissions are granular — the right people see the right controls.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon fi-rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <h3>Analytics & Uptime Reports</h3>
+          <p>Know which screens are online, what content played, and for how long. Monthly uptime reports help you prove ROI to management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section usecases" id="use-cases">
+    <div class="inner">
+      <div class="section-label">Who Uses ScreenIQ</div>
+      <h2>Built for <em>your</em> industry.</h2>
+      <p class="section-sub">Every sector has screens that need managing. ScreenIQ is pre-configured for the most common African enterprise use cases.</p>
+      <div class="usecase-grid reveal">
+        <div class="usecase-card">
+          <img src="../images/screeniq-hospital.jpg" alt="Hospital digital signage" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Healthcare</span>
+            <h4>Hospitals &amp; Clinics</h4>
+            <p>Queue management, outpatient tracking, pharmacy wait times, health education content, and emergency announcements — all from one dashboard.</p>
+          </div>
+        </div>
+        <div class="usecase-card">
+          <img src="../images/screeniq-bank.jpg" alt="Bank branch digital display" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Financial Services</span>
+            <h4>Banks &amp; MFIs</h4>
+            <p>Display exchange rates, product promotions, MoMo payment codes, and service queue numbers. Reduce teller load with self-service information screens.</p>
+          </div>
+        </div>
+        <div class="usecase-card">
+          <img src="../images/screeniq-retail.jpg" alt="Retail digital menu board" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Retail</span>
+            <h4>Supermarkets &amp; Restaurants</h4>
+            <p>Digital menu boards that update in seconds. Run promotions, show daily specials, and display pricing — without printing a single poster.</p>
+          </div>
+        </div>
+        <div class="usecase-card">
+          <img src="../images/about-team.jpg" alt="Corporate office digital signage" class="usecase-img"/>
+          <div class="usecase-body">
+            <span class="usecase-tag">Corporate</span>
+            <h4>Office &amp; Government Buildings</h4>
+            <p>Meeting room displays, visitor wayfinding, company dashboards, and internal announcements across multi-floor or multi-branch organisations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="inner">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+        <div>
+          <div class="section-label">How It Works</div>
+          <h2>Up and running in<br><em>under 10 minutes</em>.</h2>
+          <p class="section-sub">No specialist engineers. No hardware rip-and-replace. If it has a screen and an HDMI port, ScreenIQ can run on it.</p>
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-num">1</div>
+              <div>
+                <h4>Plug in a low-cost media player</h4>
+                <p>A Raspberry Pi, Amazon Fire Stick, or Android TV box. Any device with an HDMI port and browser works. We recommend hardware under $30.</p>
+              </div>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">2</div>
+              <div>
+                <h4>Log into the ScreenIQ dashboard</h4>
+                <p>Your account is cloud-based. Log in from any browser — laptop, phone, or tablet. Each screen gets a unique pairing code.</p>
+              </div>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">3</div>
+              <div>
+                <h4>Upload or design your content</h4>
+                <p>Use the drag-and-drop editor to build layouts, or upload images and videos directly. Schedule content per screen or per location.</p>
+              </div>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">4</div>
+              <div>
+                <h4>Go live — and monitor remotely</h4>
+                <p>Content pushes to screens in seconds. The dashboard shows you which screens are live, offline, or scheduled — from anywhere.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="../images/screeniq-hero.jpg" alt="ScreenIQ dashboard preview"
+            style="width:100%; border-radius:26px; box-shadow:0 32px 64px -20px rgba(0,0,0,0.15); object-fit:cover; max-height:480px;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spec Table -->
+  <section class="section" style="background:var(--surface-2); padding-top:60px;">
+    <div class="inner">
+      <div class="section-label center">Technical Specifications</div>
+      <h2 style="text-align:center;">What's included in<br><em>every plan</em>.</h2>
+      <table class="spec-table" style="margin-top:44px;">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th>Business</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Screens managed</td><td>Up to 3</td><td>Up to 20</td><td>Unlimited</td></tr>
+          <tr><td>Offline playback</td><td class="spec-check">✓</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>Queue management module</td><td>—</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>Mobile money display (MoMo/Airtel)</td><td class="spec-check">✓</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>Multi-branch / multi-location</td><td>—</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>Role-based access</td><td>—</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>Uptime &amp; analytics reports</td><td>—</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>API integrations (ERP, HIS, CRM)</td><td>—</td><td>—</td><td class="spec-check">✓</td></tr>
+          <tr><td>On-site setup support (Uganda)</td><td>—</td><td class="spec-check">✓</td><td class="spec-check">✓</td></tr>
+          <tr><td>Pricing (UGX / month)</td><td>Free (Pilot)</td><td>Contact Us</td><td>Contact Us</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="inner">
+      <div class="section-label center" style="color:rgba(255,255,255,0.3);">Get Started</div>
+      <h2>Be one of the first<br>to run <em>ScreenIQ</em>.</h2>
+      <p>We're onboarding 5 pilot organisations in Uganda. Get 3 months free in exchange for honest feedback. Limited spots available.</p>
+      <div class="cta-btns">
+        <a href="../index.html#contact" class="btn-primary">Apply for Pilot &rarr;</a>
+        <a href="../index.html#contact" class="btn-ghost">Request a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="f-logo">
+        <div class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 3L8 8L3 13M9 13H13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        Kova Labs
+      </a>
+      <p class="f-copy">&copy; 2026 Kova Labs &middot; Kampala, Uganda &middot; ScreenIQ Product Page</p>
+      <div class="f-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#products">Products</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .step').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

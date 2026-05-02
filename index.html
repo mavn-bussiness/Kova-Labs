@@ -49,76 +49,47 @@
 
   <!-- ── Hero ── -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="video-background">
+      <video autoplay loop muted playsinline class="hero-video" poster="" id="heroVideo">
+        <source src="videos/hero-network-globe.mp4" type="video/mp4">
+        <source src="videos/hero-globe-connections.mp4" type="video/mp4">
+        <source src="videos/hero-data-streams.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+    <div class="hero-content fade-in-up">
       <div class="eyebrow">
         <span class="eyebrow-dot"></span>
-        Building for Africa · Piloting in Uganda
+        Building for Africa &middot; Piloting in Uganda
       </div>
       <h1>Enterprise software<br>built for <em>here</em>.</h1>
-      <p class="hero-sub">Kova Labs is building the intelligent business stack Africa's corporate sector deserves — offline-first, compliance-ready, mobile-native, and priced for this market.</p>
+      <p class="hero-sub">Kova Labs is building the intelligent business stack Africa's corporate sector deserves &mdash; offline-first, compliance-ready, mobile-native, and priced for this market.</p>
       <div class="hero-actions">
-        <a href="#products" class="btn btn-dark">Explore Products</a>
-        <a href="#contact" class="btn btn-outline">Book a Demo</a>
+        <a href="#products" class="btn btn-hero-primary">Explore Products &rarr;</a>
+        <a href="#contact" class="btn btn-hero-ghost">Book a Demo</a>
       </div>
-      <div class="investor-bar">
-        <div class="inv-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-            <polyline points="17 6 23 6 23 12"/>
-          </svg>
+      <div class="hero-metrics">
+        <div class="hm-item">
+          <div class="hm-val">7</div>
+          <div class="hm-lbl">Product Verticals</div>
         </div>
-        <div class="inv-text">
-          <strong>Seed Round — Now Open</strong>
-          <span>We're actively onboarding early investors and enterprise pilot clients in Uganda.</span>
+        <div class="hm-divider"></div>
+        <div class="hm-item">
+          <div class="hm-val">44M+</div>
+          <div class="hm-lbl">Underserved SMEs</div>
         </div>
-        <a href="#investor" class="inv-link">VIEW OPPORTUNITY →</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="dashboard-mock">
-        <div class="dm-header">
-          <div class="dm-dot" style="background:#ff5f56"></div>
-          <div class="dm-dot" style="background:#ffbd2e;margin-left:4px"></div>
-          <div class="dm-dot" style="background:#27c93f;margin-left:4px"></div>
-          <span>kova.dashboard — Live Preview</span>
-        </div>
-        <div class="dm-body">
-          <div class="dm-row">
-            <div class="dm-card">
-              <div class="dm-card-label">Fleet Active</div>
-              <div class="dm-card-value" id="fleetCount">24</div>
-              <div class="dm-card-sub">↑ 3 since yesterday</div>
-            </div>
-            <div class="dm-card">
-              <div class="dm-card-label">MoMo Txns (Today)</div>
-              <div class="dm-card-value" id="txnCount">1,482</div>
-              <div class="dm-card-sub">↑ 12% vs avg</div>
-            </div>
-          </div>
-          <div class="dm-chart">
-            <div class="dm-chart-label">
-              <span>Revenue Index</span>
-              <span style="color:var(--accent)">+22% MoM</span>
-            </div>
-            <div class="dm-bars" id="dashBars"></div>
-          </div>
-          <div class="dm-status">
-            <div class="dm-status-row">
-              <span class="ds-label">URA PAYE Filing — Q2 2026</span>
-              <span class="ds-badge ds-green">Filed ✓</span>
-            </div>
-            <div class="dm-status-row">
-              <span class="ds-label">MTN MoMo Reconciliation</span>
-              <span class="ds-badge ds-teal">Synced</span>
-            </div>
-            <div class="dm-status-row">
-              <span class="ds-label">NSSF Compliance Score</span>
-              <span class="ds-badge ds-amber" id="nssf">92%</span>
-            </div>
-          </div>
+        <div class="hm-divider"></div>
+        <div class="hm-item">
+          <div class="hm-val">East Africa</div>
+          <div class="hm-lbl">Launch Market</div>
         </div>
       </div>
     </div>
+    <a href="#products" class="scroll-indicator" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </a>
   </section>
 
   <!-- ── Trust Strip ── -->
@@ -143,7 +114,7 @@
       <div class="trust-divider"></div>
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        Piloting in Uganda — Q3 2026
+        ScreenIQ Pilot &mdash; Enrolling Now
       </div>
     </div>
   </div>
@@ -153,85 +124,103 @@
     <div class="section-header">
       <div class="section-label">Product Suite</div>
       <h2>One platform.<br>Every corporate need.</h2>
-      <p class="section-sub">Each Kova product is purpose-built for a real pain point. All products share one login, one data layer, and one support team. Launching sequentially — starting with TrackIQ.</p>
+      <p class="section-sub">Each Kova product is purpose-built for a real pain point experienced in African workplaces. All products share one login, one data layer, and one support team. <strong>Pilot launching now: ScreenIQ &mdash; Digital Signage.</strong></p>
     </div>
 
     <div class="products-grid">
-
-      <!-- Featured -->
-      <div class="product-card product-card--featured fade-in-up">
-        <div class="product-icon p-teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-          </svg>
+  
+      <!-- PILOT: ScreenIQ -->
+      <a href="products/screeniq.html" class="product-card product-card--featured product-card--image fade-in-up" style="text-decoration:none;color:inherit;">
+        <div class="pc-image-wrap">
+          <img src="images/screeniq-hero.jpg" alt="ScreenIQ Digital Signage" class="pc-img"/>
+          <div class="pc-img-overlay"></div>
         </div>
         <div class="product-body">
-          <h3>TrackIQ <span class="product-new">Pilot Live</span></h3>
-          <p>Real-time vehicle and asset tracking compatible with <em>any</em> GPS hardware. Live maps, geofencing, fuel reports, and driver-behaviour analytics — all in one dashboard. Works on 2G, 3G, and 4G; syncs offline data automatically.</p>
-          <span class="product-tag">Fleet & Asset Management</span>
+          <div class="product-icon p-indigo" style="margin-bottom:14px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>ScreenIQ <span class="product-new">Pilot Now</span></h3>
+          <p>Cloud-based digital signage for hospitals, banks, and retail branches. Manage every screen centrally, display live MoMo payment prompts, and keep playing even offline. Born from a real hospital ICT internship.</p>
+          <span class="product-tag">Digital Signage &amp; Display</span>
+          <div class="pc-link">View Product &rarr;</div>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card fade-in-up">
-        <div class="product-icon p-green">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
+      <!-- KovaCard -->
+      <a href="products/kovacard.html" class="product-card product-card--image fade-in-up" style="text-decoration:none;color:inherit;">
+        <div class="pc-image-wrap" style="height:160px;">
+          <img src="images/kovacard-nfc.jpg" alt="KovaCard NFC" class="pc-img"/>
+          <div class="pc-img-overlay"></div>
         </div>
-        <h3>InboxOS <span class="product-soon">Coming Soon</span></h3>
-        <p>Unified messaging across WhatsApp, email, LinkedIn, Facebook & Instagram — with AI summarisation and auto-routing by team.</p>
-        <span class="product-tag">Messaging & Communication</span>
-      </div>
-
-      <div class="product-card fade-in-up">
-        <div class="product-icon p-amber">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-            <line x1="7" y1="7" x2="7.01" y2="7"/>
-          </svg>
+        <div class="product-icon p-blue" style="margin-top:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 10h2M16 14h2M6 10h6M6 14h4"/></svg>
         </div>
-        <h3>LeadHarvest <span class="product-soon">Coming Soon</span></h3>
-        <p>Social commerce automation. Auto-reply to buying signals, capture leads from DMs, and convert social engagement into pipeline.</p>
-        <span class="product-tag">Social Commerce</span>
-      </div>
+        <h3>KovaCard <span class="product-soon">Coming Soon</span></h3>
+        <p>NFC &amp; RFID smart cards for staff ID, access control, patient wristbands, and cashless payments. Replaces paper registers.</p>
+        <span class="product-tag">NFC &amp; RFID Identity</span>
+        <div class="pc-link">View Product &rarr;</div>
+      </a>
 
-      <div class="product-card fade-in-up">
-        <div class="product-icon p-blue">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
+      <!-- TrackIQ -->
+      <a href="products/trackiq.html" class="product-card product-card--image fade-in-up" style="text-decoration:none;color:inherit;">
+        <div class="pc-image-wrap" style="height:160px;">
+          <img src="images/trackiq-fleet.jpg" alt="TrackIQ Fleet" class="pc-img"/>
+          <div class="pc-img-overlay"></div>
+        </div>
+        <div class="product-icon p-teal" style="margin-top:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        </div>
+        <h3>TrackIQ <span class="product-soon">Coming Soon</span></h3>
+        <p>Real-time vehicle and asset tracking with live maps, geofencing, fuel reports, and driver analytics. Works on 2G/3G.</p>
+        <span class="product-tag">Fleet &amp; Asset Management</span>
+        <div class="pc-link">View Product &rarr;</div>
+      </a>
+
+      <!-- StaffDesk -->
+      <div class="product-card product-card--image fade-in-up">
+        <div class="pc-image-wrap" style="height:140px;">
+          <img src="images/staffdesk-hr.jpg" alt="StaffDesk HR" class="pc-img"/>
+          <div class="pc-img-overlay"></div>
+        </div>
+        <div class="product-icon p-blue" style="margin-top:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <h3>StaffDesk <span class="product-soon">Coming Soon</span></h3>
-        <p>Payroll, NSSF & PAYE compliance, leave management, and contracts — built from the ground up around Uganda's labour requirements.</p>
-        <span class="product-tag">HR & Payroll Compliance</span>
+        <p>Payroll, NSSF &amp; PAYE compliance, leave management, and contracts — built around Uganda's labour laws.</p>
+        <span class="product-tag">HR &amp; Payroll Compliance</span>
       </div>
 
-      <div class="product-card fade-in-up">
-        <div class="product-icon p-purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-            <line x1="1" y1="10" x2="23" y2="10"/>
-          </svg>
+      <!-- PayFlow -->
+      <div class="product-card product-card--image fade-in-up">
+        <div class="pc-image-wrap" style="height:140px;">
+          <img src="images/payflow-momo.jpg" alt="PayFlow Mobile Money" class="pc-img"/>
+          <div class="pc-img-overlay"></div>
+        </div>
+        <div class="product-icon p-purple" style="margin-top:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
         <h3>PayFlow <span class="product-soon">Coming Soon</span></h3>
-        <p>Mobile money reconciliation across MTN MoMo and Airtel Money, with automated invoicing, receipts, and cash-flow dashboards.</p>
+        <p>MTN MoMo &amp; Airtel Money reconciliation with automated invoicing, receipts, and cash-flow dashboards.</p>
         <span class="product-tag">Finance & Payments</span>
       </div>
 
+      <!-- InboxOS -->
+      <div class="product-card fade-in-up">
+        <div class="product-icon p-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>InboxOS <span class="product-soon">Coming Soon</span></h3>
+        <p>Unified messaging across WhatsApp, email, LinkedIn, Facebook & Instagram — with AI summarisation and auto-routing.</p>
+        <span class="product-tag">Messaging & Communication</span>
+      </div>
+
+      <!-- VaultDocs -->
       <div class="product-card fade-in-up">
         <div class="product-icon p-rose">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
         <h3>VaultDocs <span class="product-soon">Coming Soon</span></h3>
-        <p>Offline-first document management with approval workflows, version history, and role-based access. Stop losing critical documents.</p>
+        <p>Offline-first document management with approval workflows, version history, and role-based access.</p>
         <span class="product-tag">Operations & Compliance</span>
       </div>
 
@@ -245,24 +234,24 @@
       </div>
       <div class="rb-phases">
         <div class="rb-phase active">
-          <div class="rb-phase-tag">Phase 1 · Now</div>
-          <div class="rb-phase-title">TrackIQ Pilot</div>
-          <div class="rb-phase-items">Fleet tracking · GPS integration · Live dashboard · Uganda pilot clients</div>
+          <div class="rb-phase-tag">Phase 1 &middot; Now</div>
+          <div class="rb-phase-title">ScreenIQ Pilot</div>
+          <div class="rb-phase-items">Digital signage &middot; Queue management &middot; Hospital &amp; bank pilots &middot; Uganda</div>
         </div>
         <div class="rb-phase next">
-          <div class="rb-phase-tag">Phase 2 · Q4 2026</div>
+          <div class="rb-phase-tag">Phase 2 &middot; Q4 2026</div>
+          <div class="rb-phase-title">KovaCard + TrackIQ</div>
+          <div class="rb-phase-items">NFC/RFID smart cards &middot; Fleet tracking &middot; Access control</div>
+        </div>
+        <div class="rb-phase future">
+          <div class="rb-phase-tag">Phase 3 &middot; 2027</div>
           <div class="rb-phase-title">StaffDesk + PayFlow</div>
-          <div class="rb-phase-items">HR & payroll · MoMo reconciliation · URA PAYE filing automation</div>
+          <div class="rb-phase-items">HR &amp; payroll &middot; MoMo reconciliation &middot; URA PAYE automation</div>
         </div>
         <div class="rb-phase future">
-          <div class="rb-phase-tag">Phase 3 · 2026</div>
-          <div class="rb-phase-title">InboxOS + LeadHarvest</div>
-          <div class="rb-phase-items">Unified messaging · Social commerce · AI-powered lead capture</div>
-        </div>
-        <div class="rb-phase future">
-          <div class="rb-phase-tag">Phase 4 · 2027</div>
+          <div class="rb-phase-tag">Phase 4 &middot; 2027</div>
           <div class="rb-phase-title">East Africa Expansion</div>
-          <div class="rb-phase-items">Kenya · Tanzania · Rwanda · VaultDocs · Full suite launch</div>
+          <div class="rb-phase-items">Kenya &middot; Tanzania &middot; Rwanda &middot; Full suite &middot; InboxOS &middot; VaultDocs</div>
         </div>
       </div>
     </div>
@@ -380,7 +369,11 @@
         </div>
       </div>
       <div class="why-visual fade-in-up">
-        <div class="why-card">
+        <div class="relatable-image-wrapper">
+          <img src="images/about-founder.jpg" alt="African tech professional" class="relatable-img">
+          <div class="img-glow"></div>
+        </div>
+        <div class="why-card float-card-1">
           <div class="wc-top">
             <span class="wc-label">URA PAYE Filing — Q2 2026</span>
             <span class="wc-badge ok">Filed ✓</span>
@@ -412,11 +405,65 @@
     </div>
   </section>
 
+  <!-- ── Founder Story ── -->
+  <section class="founder-story" id="story">
+    <div class="inner" style="max-width:1140px;margin:0 auto;">
+      <div class="fs-grid">
+        <div class="fs-image-col">
+          <div class="fs-img-wrap">
+            <img src="images/screeniq-hospital.jpg" alt="Hospital ICT setup" class="fs-img"/>
+            <div class="fs-img-badge">
+              <span class="fs-badge-dot"></span>
+              ScreenIQ &mdash; Pilot launching now
+            </div>
+          </div>
+          <div class="fs-img-wrap fs-img-wrap--small">
+            <img src="images/about-founder.jpg" alt="Young African tech professional" class="fs-img"/>
+          </div>
+        </div>
+        <div class="fs-text-col">
+          <div class="section-label">The Origin Story</div>
+          <h2>Born from a real<br><em>hospital problem</em>.</h2>
+          <blockquote class="fs-quote">
+            &ldquo;During my ICT internship at a government hospital, patients had no idea which queue they were in or which window to go to. Staff printed paper notices and taped them to walls. There was no patient tracking, no digital signage, no NFC for staff IDs &mdash; just paper. I knew software could fix this.&rdquo;
+          </blockquote>
+          <p class="fs-body">That experience became the foundation of Kova Labs. ScreenIQ, KovaCard, StaffDesk &mdash; every product solves a problem I watched African organisations struggle with daily. This isn't a solution looking for a problem. This is a real problem with software-sized solutions.</p>
+          <div class="fs-stats">
+            <div class="fs-stat">
+              <div class="fs-stat-val">8</div>
+              <div class="fs-stat-lbl">Products planned</div>
+            </div>
+            <div class="fs-stat">
+              <div class="fs-stat-val">1</div>
+              <div class="fs-stat-lbl">Pilot launching</div>
+            </div>
+            <div class="fs-stat">
+              <div class="fs-stat-val">0</div>
+              <div class="fs-stat-lbl">Investor pressure</div>
+            </div>
+          </div>
+          <a href="products/screeniq.html" class="btn btn-dark" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;">See ScreenIQ &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Market ── -->
   <section class="market" id="market">
-    <div class="section-label">The Opportunity</div>
-    <h2>Africa's corporate tech gap<br>is <em>enormous</em>.</h2>
-    <p class="section-sub" style="margin:0 auto;">The continent's SME and enterprise sector is deeply underserved by software built for Western markets. Kova Labs is positioned to lead the next wave.</p>
+    <div class="market-grid">
+      <div class="market-text">
+        <div class="section-label" style="justify-content:flex-start">The Opportunity</div>
+        <h2 style="text-align:left">Africa's corporate tech gap<br>is <em>enormous</em>.</h2>
+        <p class="section-sub" style="margin:0; text-align:left">The continent's SME and enterprise sector is deeply underserved by software built for Western markets. Kova Labs is positioned to lead the next wave.</p>
+        <div class="tag-row" style="justify-content:flex-start; margin-top: 28px; margin-bottom: 0;">
+          <span class="tag">Uganda</span><span class="tag">Kenya</span><span class="tag">Tanzania</span>
+          <span class="tag">Rwanda</span><span class="tag">Nigeria</span><span class="tag">Ghana</span><span class="tag">South Africa</span>
+        </div>
+      </div>
+      <div class="market-image-wrapper fade-in-up">
+        <img src="C:/Users/ICT ADMIN/.gemini/antigravity/brain/abe4d4fa-9787-440a-b341-6680d117917f/digital_signage_africa_1777711602908.png" alt="Digital Signage in African Bank" class="market-img">
+      </div>
+    </div>
     <div class="market-stats">
       <div class="market-stat fade-in-up">
         <div class="ms-val">44<span>M+</span></div>
@@ -434,10 +481,6 @@
         <div class="ms-val">East<span> Africa</span></div>
         <div class="ms-lbl">Initial focus — Uganda, Kenya, Tanzania, Rwanda</div>
       </div>
-    </div>
-    <div class="tag-row">
-      <span class="tag">Uganda</span><span class="tag">Kenya</span><span class="tag">Tanzania</span>
-      <span class="tag">Rwanda</span><span class="tag">Nigeria</span><span class="tag">Ghana</span><span class="tag">South Africa</span>
     </div>
   </section>
 
@@ -461,7 +504,7 @@
               <div class="inv-metric-lbl">Projected African digital economy value — largely untapped by local SaaS</div>
             </div>
             <div class="inv-metric">
-              <div class="inv-metric-val">6</div>
+              <div class="inv-metric-val">7</div>
               <div class="inv-metric-lbl">Product verticals planned, each addressing a distinct, high-value pain point</div>
             </div>
             <div class="inv-metric">
@@ -532,12 +575,15 @@
         <input type="tel"   name="phone"   placeholder="Phone number (optional)" />
         <select name="interest">
           <option value="" disabled selected>What can we help with?</option>
-          <option>TrackIQ Demo — Vehicle & Asset Tracking</option>
-          <option>Full Suite — All Products Overview</option>
+          <option>ScreenIQ — Digital Signage Pilot (Free 3 months)</option>
+          <option>KovaCard — NFC/RFID Smart Cards Waitlist</option>
+          <option>TrackIQ — Fleet &amp; Asset Tracking</option>
+          <option>StaffDesk — HR &amp; Payroll</option>
+          <option>PayFlow — Mobile Money Reconciliation</option>
+          <option>InboxOS — Unified Messaging</option>
+          <option>VaultDocs — Document Management</option>
           <option>Investor Deck Request</option>
-          <option>Pilot Programme Application</option>
-          <option>StaffDesk — HR & Payroll</option>
-          <option>PayFlow — Mobile Money</option>
+          <option>Full Suite — All Products Overview</option>
           <option>General Enquiry</option>
         </select>
         <textarea name="message" placeholder="Tell us about your organisation (optional)" rows="3"></textarea>
